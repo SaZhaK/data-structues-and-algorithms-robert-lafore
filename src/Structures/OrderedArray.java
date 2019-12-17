@@ -1,3 +1,5 @@
+package Structures;
+
 import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 

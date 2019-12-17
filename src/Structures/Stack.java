@@ -1,3 +1,5 @@
+package Structures;
+
 public class Stack {
     private int[] elements;
     private int top;

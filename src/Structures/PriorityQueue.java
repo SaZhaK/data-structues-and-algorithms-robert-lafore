@@ -1,3 +1,5 @@
+package Structures;
+
 public class PriorityQueue {
     private int[] elements;
     private int curAmount;

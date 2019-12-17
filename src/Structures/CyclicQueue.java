@@ -1,3 +1,5 @@
+package Structures;
+
 public class CyclicQueue {
     private int[] elements;
     private int front;
@@ -39,10 +41,25 @@ public class CyclicQueue {
     }
 
     public int peek() {
-        return elements[rear];
+        return elements[front];
     }
 
     public boolean isEmpty() {
         return curAmount == 0;
+    }
+
+    public void display() {
+        if (rear > front) {
+            for (int i = front; i <= rear; i++) {
+                System.out.println(elements[i] + " ");
+            }
+        } else {
+            for (int i = front; i < elements.length; i++) {
+                System.out.println(elements[i] + " ");
+            }
+            for (int i = 0; i <= rear; i++) {
+                System.out.println(elements[i] + " ");
+            }
+        }
     }
 }

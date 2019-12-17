@@ -1,3 +1,5 @@
+import Structures.Stack;
+
 import java.util.Scanner;
 
 public class correctBracketSequence {
