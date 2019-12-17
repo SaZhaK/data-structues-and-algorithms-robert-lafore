@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 public class Stack {
     private int[] elements;
     private int top;
