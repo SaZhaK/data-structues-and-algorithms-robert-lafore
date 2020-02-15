@@ -1,4 +1,5 @@
 .idea/
-src/Test
+src/Test.java
+src/MailRuLecture01.java
 # Project exclude paths
 /out/
