@@ -1,4 +1,4 @@
-package Structures;
+package Structures.LinkedListMatrix;
 
 public class LinkedListMatrix {
     private int height;

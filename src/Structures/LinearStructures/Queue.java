@@ -1,4 +1,4 @@
-package Structures;
+package Structures.LinearStructures;
 
 import java.util.LinkedList;
 

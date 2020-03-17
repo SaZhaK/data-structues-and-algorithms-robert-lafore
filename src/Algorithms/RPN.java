@@ -1,4 +1,6 @@
-import Structures.Stack;
+package Algorithms;
+
+import Structures.LinearStructures.Stack;
 
 import java.util.Scanner;
 

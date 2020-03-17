@@ -1,4 +1,4 @@
-package Structures;
+package Structures.LinearStructures;
 
 public class CyclicQueue {
     private int[] elements;

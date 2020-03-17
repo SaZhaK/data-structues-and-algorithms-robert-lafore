@@ -1,73 +1,32 @@
-package Structures;
+package Structures.LinearStructures;
 
 import java.util.EmptyStackException;
 
-public class DoublyList {
+public class SortedList {
     private Node first;
-    private Node last;
 
-    public DoublyList() {
+    public SortedList() {
         first = null;
-        last = null;
     }
 
-    public void insertFirst(int element) {
-        Node newNode = new Node(element);
-
-        if (isEmpty()) {
-            first = newNode;
-            last = first;
-        } else {
-            newNode.next = first;
-            first = newNode;
-        }
-    }
-
-    public void insertLast(int element) {
-        Node newNode = new Node(element);
-
-        if (isEmpty()) {
-            first = newNode;
-            last = first;
-        } else {
-            last.next = newNode;
-            last = newNode;
-        }
-    }
-
-    public void insertAfter(int element) {
-        Node newNode = new Node(element);
+    public void insert(int id) {
+        Node newNode = new Node(id);
 
         if (isEmpty()) {
             first = newNode;
         } else {
             Node current = first;
-            while(current != null) {
-                if (current.getId() < element) {
+            Node prev = first;
+            while (current != null) {
+                if (current.getId() < id) {
+                    prev = current;
                     current = current.next;
+                } else {
+                    break;
                 }
             }
-        }
-    }
-
-    public void deleteFirst() {
-        if (isEmpty()){
-            throw new EmptyStackException();
-        } else {
-            first = first.next;
-        }
-    }
-
-    public void deleteLast() {
-        if (isEmpty()){
-            throw new EmptyStackException();
-        } else {
-            Node current = first;
-            while (current.next != last) {
-                current = current.next;
-            }
-            current.next = null;
-            last = current;
+            prev.next = newNode;
+            newNode.next = current;
         }
     }
 
@@ -112,15 +71,6 @@ public class DoublyList {
         while (current != null) {
             System.out.print(current.getId() + " ");
             current = current.next;
-        }
-        System.out.println();
-    }
-
-    public void displayBackwards() {
-        Node current = last;
-        while (current != null) {
-            System.out.print(current.getId() + " ");
-            current = current.prev;
         }
         System.out.println();
     }

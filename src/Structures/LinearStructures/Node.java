@@ -1,4 +1,4 @@
-package Structures;
+package Structures.LinearStructures;
 
 public class Node {
     private int id;

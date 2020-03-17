@@ -1,12 +1,12 @@
-package Structures;
+package Structures.LinearStructures;
 
 import java.util.EmptyStackException;
 
-public class BilateralList {
+public class DoublyList {
     private Node first;
     private Node last;
 
-    public BilateralList() {
+    public DoublyList() {
         first = null;
         last = null;
     }
@@ -32,6 +32,21 @@ public class BilateralList {
         } else {
             last.next = newNode;
             last = newNode;
+        }
+    }
+
+    public void insertAfter(int element) {
+        Node newNode = new Node(element);
+
+        if (isEmpty()) {
+            first = newNode;
+        } else {
+            Node current = first;
+            while(current != null) {
+                if (current.getId() < element) {
+                    current = current.next;
+                }
+            }
         }
     }
 
@@ -97,6 +112,15 @@ public class BilateralList {
         while (current != null) {
             System.out.print(current.getId() + " ");
             current = current.next;
+        }
+        System.out.println();
+    }
+
+    public void displayBackwards() {
+        Node current = last;
+        while (current != null) {
+            System.out.print(current.getId() + " ");
+            current = current.prev;
         }
         System.out.println();
     }

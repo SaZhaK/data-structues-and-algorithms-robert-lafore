@@ -1,32 +1,58 @@
-package Structures;
+package Structures.LinearStructures;
 
 import java.util.EmptyStackException;
 
-public class SortedList {
+public class BilateralList {
     private Node first;
+    private Node last;
 
-    public SortedList() {
+    public BilateralList() {
         first = null;
+        last = null;
     }
 
-    public void insert(int id) {
-        Node newNode = new Node(id);
+    public void insertFirst(int element) {
+        Node newNode = new Node(element);
 
         if (isEmpty()) {
             first = newNode;
+            last = first;
+        } else {
+            newNode.next = first;
+            first = newNode;
+        }
+    }
+
+    public void insertLast(int element) {
+        Node newNode = new Node(element);
+
+        if (isEmpty()) {
+            first = newNode;
+            last = first;
+        } else {
+            last.next = newNode;
+            last = newNode;
+        }
+    }
+
+    public void deleteFirst() {
+        if (isEmpty()){
+            throw new EmptyStackException();
+        } else {
+            first = first.next;
+        }
+    }
+
+    public void deleteLast() {
+        if (isEmpty()){
+            throw new EmptyStackException();
         } else {
             Node current = first;
-            Node prev = first;
-            while (current != null) {
-                if (current.getId() < id) {
-                    prev = current;
-                    current = current.next;
-                } else {
-                    break;
-                }
+            while (current.next != last) {
+                current = current.next;
             }
-            prev.next = newNode;
-            newNode.next = current;
+            current.next = null;
+            last = current;
         }
     }
 
