@@ -19,7 +19,7 @@ public class Queue {
     }
 
     public int remove() {
-        if (isEmpty()) {
+        if (!isEmpty()) {
             front++;
             return elements.get(front - 1);
         } else throw new ArrayIndexOutOfBoundsException();
